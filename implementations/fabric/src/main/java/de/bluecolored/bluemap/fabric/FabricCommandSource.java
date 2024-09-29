@@ -51,8 +51,8 @@ public class FabricCommandSource implements CommandSource {
     @Override
     public void sendMessage(Text text) {
         delegate.sendFeedback(
-                () -> net.minecraft.text.Text.Serialization
-                        .fromJson(text.toJSONString(), delegate.getRegistryManager()),
+                () -> net.minecraft.text.Text.Serializer
+                        .fromJson(text.toJSONString()),
                 false
         );
     }
